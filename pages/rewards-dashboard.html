@@ -1,0 +1,450 @@
+<div class="rewards-dashboard-page">
+    <!-- Header -->
+    <div class="page-header">
+        <button class="btn-back" onclick="loadPage('dashboard')">
+            <i>←</i> Quay lại
+        </button>
+        <h1>Combo Rewards</h1>
+    </div>
+
+    <!-- Mô tả -->
+    <div class="description-card card mb-6">
+        <p>Vương quốc ưu đãi dành riêng cho bạn</p>
+    </div>
+
+    <!-- Stats Overview -->
+    <div class="grid grid-4 mb-6">
+        <div class="card stats-card">
+            <div class="stats-icon primary">
+                <i>🎁</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">Chờ nhận</span>
+                <h3 class="stats-value">1</h3>
+            </div>
+        </div>
+
+        <div class="card stats-card">
+            <div class="stats-icon success">
+                <i>🏆</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">Tất cả</span>
+                <h3 class="stats-value">24</h3>
+            </div>
+        </div>
+
+        <div class="card stats-card">
+            <div class="stats-icon warning">
+                <i>📈</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">Lãi suất +</span>
+                <h3 class="stats-value">8</h3>
+            </div>
+        </div>
+
+        <div class="card stats-card">
+            <div class="stats-icon info">
+                <i>🎟️</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">Voucher</span>
+                <h3 class="stats-value">12</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs mb-6">
+        <button class="filter-tab active" onclick="filterRewards('all')">Tất cả</button>
+        <button class="filter-tab" onclick="filterRewards('interest')">Lãi suất +</button>
+        <button class="filter-tab" onclick="filterRewards('voucher')">Voucher</button>
+        <button class="filter-tab" onclick="filterRewards('experience')">Trải nghiệm</button>
+    </div>
+
+    <!-- Rewards Grid -->
+    <div class="rewards-grid mb-6">
+        <!-- Lãi suất +0.2% -->
+        <div class="reward-card claimed">
+            <div class="reward-type interest">📈</div>
+            <div class="reward-content">
+                <h3>Lãi suất +0.2%</h3>
+                <p>Cộng thêm lãi suất cho tất cả số tiết kiệm</p>
+                <div class="reward-value">+0.2%</div>
+            </div>
+            <div class="reward-status">
+                <span class="status-badge claimed">Đã sử dụng</span>
+            </div>
+        </div>
+
+        <!-- Voucher Gongcha 50K -->
+        <div class="reward-card available">
+            <div class="reward-type voucher">🧋</div>
+            <div class="reward-content">
+                <h3>Voucher Gongcha 50K</h3>
+                <p>Giảm 50K cho đơn hàng tại Gongcha</p>
+                <div class="reward-value">50.000đ</div>
+            </div>
+            <div class="reward-status">
+                <button class="btn btn-primary btn-small" onclick="claimReward('gongcha')">Nhận thưởng</button>
+            </div>
+        </div>
+
+        <!-- Lãi suất +0.5% -->
+        <div class="reward-card locked">
+            <div class="reward-type interest">📊</div>
+            <div class="reward-content">
+                <h3>Lãi suất +0.5%</h3>
+                <p>Bonus lãi suất cho kỳ hạn 12 tháng</p>
+                <div class="reward-value">+0.5%</div>
+            </div>
+            <div class="reward-requirement">
+                <div class="requirement-label">Yêu cầu Level 30</div>
+                <div class="requirement-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <span class="requirement-text">18/30</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vé CGV miễn phí -->
+        <div class="reward-card locked">
+            <div class="reward-type voucher">🎬</div>
+            <div class="reward-content">
+                <h3>Vé CGV miễn phí</h3>
+                <p>Miễn phí 2 vé xem phim tại CGV</p>
+                <div class="reward-value">2 vé</div>
+            </div>
+            <div class="reward-requirement">
+                <div class="requirement-label">Yêu cầu Level 45</div>
+                <div class="requirement-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%"></div>
+                    </div>
+                    <span class="requirement-text">18/45</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workshop tài chính -->
+        <div class="reward-card locked">
+            <div class="reward-type experience">📚</div>
+            <div class="reward-content">
+                <h3>Workshop tài chính</h3>
+                <p>Tham gia workshop quản lý tài chính</p>
+                <div class="reward-value vip">VIP</div>
+            </div>
+            <div class="reward-requirement">
+                <div class="requirement-label">Yêu cầu Level 60</div>
+                <div class="requirement-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%"></div>
+                    </div>
+                    <span class="requirement-text">18/60</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pre-sale Concert -->
+        <div class="reward-card locked exclusive">
+            <div class="reward-type experience">🎵</div>
+            <div class="reward-content">
+                <h3>Pre-sale Concert</h3>
+                <p>Quyền mua vé sớm concert hot nhất</p>
+                <div class="reward-value exclusive">Độc quyền</div>
+            </div>
+            <div class="reward-requirement">
+                <div class="requirement-label">Yêu cầu Level 100</div>
+                <div class="requirement-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 18%"></div>
+                    </div>
+                    <span class="requirement-text">18/100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Level Progress -->
+    <div class="card level-progress-card mb-6">
+        <div class="level-header">
+            <h3>Level của bạn</h3>
+            <span class="current-level">Level 18</span>
+        </div>
+        <div class="level-progress">
+            <div class="progress-bar large">
+                <div class="progress-fill" style="width: 36%"></div>
+            </div>
+            <div class="level-next">
+                <span>Còn <strong>12</strong> Level để mở khóa phần thưởng tiếp theo</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cách tăng level -->
+    <div class="card">
+        <h3 class="card-title">Cách tăng level</h3>
+        
+        <div class="level-tips-grid">
+            <div class="tip-item">
+                <div class="tip-icon">💰</div>
+                <div class="tip-content">
+                    <h4>Gửi tiết kiệm mới</h4>
+                    <p>Mỗi lần gửi tiền = <strong>+1 Level</strong></p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <div class="tip-icon">🎯</div>
+                <div class="tip-content">
+                    <h4>Hoàn thành mục tiêu</h4>
+                    <p>Mỗi mục tiêu đạt = <strong>+2 Level</strong></p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <div class="tip-icon">🔥</div>
+                <div class="tip-content">
+                    <h4>Giữ Streak</h4>
+                    <p>Mỗi 3 tháng liên tiếp = <strong>+1 Level</strong></p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <div class="tip-icon">👥</div>
+                <div class="tip-content">
+                    <h4>Giới thiệu bạn bè</h4>
+                    <p>Mỗi bạn tham gia = <strong>+3 Level</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.rewards-dashboard-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 0.5rem 1.5rem;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-tab:hover {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.filter-tab.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.reward-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.reward-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.reward-card.claimed {
+    background: linear-gradient(135deg, #F3F4F6, #FFFFFF);
+    opacity: 0.8;
+}
+
+.reward-card.locked {
+    background: linear-gradient(135deg, #F9FAFB, #FFFFFF);
+}
+
+.reward-card.exclusive {
+    border: 2px solid #FFD700;
+}
+
+.reward-type {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.reward-type.interest { color: var(--primary-color); }
+.reward-type.voucher { color: var(--secondary-color); }
+.reward-type.experience { color: var(--warning-color); }
+
+.reward-content h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.reward-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.reward-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.reward-value.vip {
+    color: var(--warning-color);
+    background: #FEF3C7;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+
+.reward-value.exclusive {
+    color: #FFD700;
+    background: #FEF9C3;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+
+.reward-status {
+    margin-top: 1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.claimed {
+    background: #E5E7EB;
+    color: var(--text-secondary);
+}
+
+.reward-requirement {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.requirement-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.requirement-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.requirement-progress .progress-bar {
+    flex: 1;
+}
+
+.requirement-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 45px;
+}
+
+.level-progress-card {
+    background: linear-gradient(135deg, var(--primary-color), #818CF8);
+    color: white;
+}
+
+.level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.level-header h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.current-level {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.level-next {
+    text-align: right;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.level-next strong {
+    font-size: 1rem;
+}
+
+.level-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+}
+
+.tip-icon {
+    font-size: 2rem;
+}
+
+.tip-content h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.tip-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.tip-content strong {
+    color: var(--primary-color);
+}
+</style>
