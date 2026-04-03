@@ -1,0 +1,146 @@
+/* Pet Icons Styles */
+
+/* Pet Emoji Base */
+.pet-emoji {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+}
+
+/* Pet Emoji Sizes */
+.pet-emoji.small {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+}
+
+.pet-emoji.medium {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+}
+
+.pet-emoji.large {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+}
+
+.pet-emoji.xlarge {
+    width: 120px;
+    height: 120px;
+    font-size: 4rem;
+}
+
+/* Pet Emoji with Border */
+.pet-emoji-bordered {
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+/* Pet Emoji by Rarity */
+.pet-emoji.common {
+    background: linear-gradient(135deg, #E5E7EB, #D1D5DB);
+}
+
+.pet-emoji.rare {
+    background: linear-gradient(135deg, #818CF8, #6366F1);
+    color: white;
+}
+
+.pet-emoji.legendary {
+    background: linear-gradient(135deg, #FBBF24, #F59E0B);
+    color: white;
+}
+
+/* Pet Evolution Icons */
+.evolution-icon {
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.evolution-icon.completed {
+    background: var(--success-light);
+}
+
+.evolution-icon.current {
+    background: var(--primary-light);
+    border: 2px solid var(--primary-color);
+}
+
+/* Pet Mini Icon */
+.pet-mini {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--light-bg);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+
+.pet-mini-icon {
+    font-size: 1rem;
+}
+
+/* Pet Selector */
+.pet-selector-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    border: 3px solid var(--primary-color);
+    transition: all 0.3s;
+}
+
+.pet-card:hover .pet-selector-icon {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+}
+
+.pet-card.selected .pet-selector-icon {
+    background: linear-gradient(135deg, var(--primary-color), #818CF8);
+    color: white;
+}
+
+/* Animation cho icon */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.pet-emoji:hover {
+    animation: bounce 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pet-emoji.xlarge {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+    }
+    
+    .pet-selector-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+}
