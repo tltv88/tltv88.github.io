@@ -1,0 +1,343 @@
+<div class="new-savings-page">
+    <!-- Header với nút quay lại -->
+    <div class="page-header">
+        <button class="btn-back" onclick="loadPage('dashboard')">
+            <i>←</i> Quay lại
+        </button>
+        <h1>Tạo khoản tiết kiệm mới</h1>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="progress-steps mb-6">
+        <div class="step active">
+            <div class="step-number">1</div>
+            <div class="step-label">Chọn mục tiêu</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-label">Chọn Pet</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-label">Kỳ hạn & số tiền</div>
+        </div>
+    </div>
+
+    <!-- Tiêu đề bước -->
+    <div class="step-header mb-6">
+        <h2>Chọn mục tiêu tiết kiệm</h2>
+        <p>Lựa chọn mục đích gửi tiết kiệm của bạn</p>
+    </div>
+
+    <!-- Grid mục tiêu -->
+    <div class="goals-grid">
+        <!-- Tiết kiệm học phí -->
+        <div class="goal-card" onclick="selectGoal('education')">
+            <div class="goal-icon">🎓</div>
+            <div class="goal-content">
+                <h3>Tiết kiệm học phí</h3>
+                <p>Dành cho chi phí học tập, đào tạo cho con em</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+
+        <!-- Tiết kiệm mua nhà -->
+        <div class="goal-card" onclick="selectGoal('house')">
+            <div class="goal-icon">🏠</div>
+            <div class="goal-content">
+                <h3>Tiết kiệm mua nhà</h3>
+                <p>Tích lũy để mua nhà, đất hoặc sửa sang nơi ở</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+
+        <!-- Tiết kiệm hưu trí -->
+        <div class="goal-card" onclick="selectGoal('retirement')">
+            <div class="goal-icon">🌴</div>
+            <div class="goal-content">
+                <h3>Tiết kiệm hưu trí</h3>
+                <p>Chuẩn bị tài chính cho tuổi nghỉ hưu an nhàn</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+
+        <!-- Tiết kiệm du lịch -->
+        <div class="goal-card" onclick="selectGoal('travel')">
+            <div class="goal-icon">✈️</div>
+            <div class="goal-content">
+                <h3>Tiết kiệm du lịch</h3>
+                <p>Cho những chuyến đi và khám phá thế giới</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+
+        <!-- Tiết kiệm xe hơi -->
+        <div class="goal-card" onclick="selectGoal('car')">
+            <div class="goal-icon">🚗</div>
+            <div class="goal-content">
+                <h3>Tiết kiệm xe hơi</h3>
+                <p>Tích lũy mua phương tiện đi lại</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+
+        <!-- Tiết kiệm khẩn cấp -->
+        <div class="goal-card" onclick="selectGoal('emergency')">
+            <div class="goal-icon">🆘</div>
+            <div class="goal-content">
+                <h3>Quỹ khẩn cấp</h3>
+                <p>Dự phòng cho những tình huống bất ngờ</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+
+        <!-- Tiết kiệm cưới hỏi -->
+        <div class="goal-card" onclick="selectGoal('wedding')">
+            <div class="goal-icon">💒</div>
+            <div class="goal-content">
+                <h3>Tiết kiệm cưới hỏi</h3>
+                <p>Chuẩn bị cho ngày trọng đại của cuộc đời</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+
+        <!-- Tiết kiệm kinh doanh -->
+        <div class="goal-card" onclick="selectGoal('business')">
+            <div class="goal-icon">💼</div>
+            <div class="goal-content">
+                <h3>Tiết kiệm kinh doanh</h3>
+                <p>Vốn khởi nghiệp cho dự án kinh doanh</p>
+            </div>
+            <div class="goal-check">
+                <span class="check-circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút tiếp tục -->
+    <div class="action-footer">
+        <button class="btn btn-primary btn-large" onclick="nextToPetSelection()" id="continue-btn" disabled>
+            Tiếp tục
+        </button>
+    </div>
+</div>
+
+<style>
+.new-savings-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.step.active .step-number {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.step.completed .step-number {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+    content: "✓";
+}
+
+.step-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.step.active .step-label {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.step-line {
+    width: 100px;
+    height: 2px;
+    background: var(--border-color);
+    margin: 0 1rem;
+}
+
+.step-header {
+    text-align: center;
+}
+
+.step-header h2 {
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.step-header p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.goal-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.goal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.goal-card.selected {
+    border-color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+.goal-icon {
+    font-size: 3rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goal-content {
+    flex: 1;
+}
+
+.goal-content h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.goal-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.goal-check {
+    width: 24px;
+    height: 24px;
+}
+
+.check-circle {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: white;
+}
+
+.goal-card.selected .check-circle {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    position: relative;
+}
+
+.goal-card.selected .check-circle::after {
+    content: "✓";
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+}
+
+.action-footer {
+    position: sticky;
+    bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 -4px 6px -1px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.btn-large {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.125rem;
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .progress-steps {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .step-line {
+        width: 2px;
+        height: 30px;
+    }
+    
+    .goals-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
