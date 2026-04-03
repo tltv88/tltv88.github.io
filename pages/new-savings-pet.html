@@ -1,0 +1,788 @@
+<div class="new-savings-page">
+    <!-- Header với nút quay lại -->
+    <div class="page-header">
+        <button class="btn-back" onclick="loadPage('new-savings-goal')">
+            <i>←</i> Quay lại
+        </button>
+        <h1>Tạo khoản tiết kiệm mới</h1>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="progress-steps mb-6">
+        <div class="step completed">
+            <div class="step-number">✓</div>
+            <div class="step-label">Chọn mục tiêu</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step active">
+            <div class="step-number">2</div>
+            <div class="step-label">Chọn Pet</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-label">Kỳ hạn & số tiền</div>
+        </div>
+    </div>
+
+    <!-- Tiêu đề bước -->
+    <div class="step-header mb-6">
+        <h2>Chọn Pet đồng hành</h2>
+        <p>Chọn một người bạn ảo để đồng hành cùng mục tiêu <strong id="selected-goal-name" class="goal-highlight">Học phí</strong> của bạn</p>
+    </div>
+
+    <!-- Giới thiệu -->
+    <div class="info-card card mb-6">
+        <div class="info-icon">🐾</div>
+        <div class="info-content">
+            <h3>Pet sẽ lớn lên cùng bạn!</h3>
+            <p>Mỗi pet có tính cách và bonus đặc biệt riêng. Pet sẽ tiến hóa qua 5 giai đoạn dựa trên tiến độ tiết kiệm của bạn. Bạn có thể nuôi nhiều pets cho các mục tiêu khác nhau.</p>
+        </div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs mb-6">
+        <button class="filter-tab active" onclick="filterPets('all')">Tất cả</button>
+        <button class="filter-tab" onclick="filterPets('common')">Phổ biến</button>
+        <button class="filter-tab" onclick="filterPets('rare')">Hiếm</button>
+        <button class="filter-tab" onclick="filterPets('legendary')">Huyền thoại</button>
+    </div>
+
+    <!-- Pets Grid -->
+    <div class="pets-grid">
+        <!-- Mèo May Mắn - Phổ biến -->
+        <div class="pet-card" onclick="selectPet('lucky-cat')" data-rarity="common">
+            <div class="pet-ribbon common">Phổ biến</div>
+            <div class="pet-avatar">
+                <div class="pet-emoji-select">🐱</div>
+            </div>
+            <div class="pet-info">
+                <h3>Mèo May Mắn</h3>
+                <p class="pet-tagline">Nhanh nhẹn và thông minh</p>
+                
+                <div class="pet-bonus">
+                    <span class="bonus-badge">✨ Tăng trưởng nhanh</span>
+                    <span class="bonus-value">+10% EXP mỗi lần gửi tiền</span>
+                </div>
+                
+                <div class="pet-personality">
+                    <span class="personality-label">Tính cách:</span>
+                    <span class="personality-value">Năng động, thích khám phá</span>
+                </div>
+                
+                <div class="pet-stats">
+                    <div class="stat">
+                        <span class="stat-icon">❤️</span>
+                        <span class="stat-number">85</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-number">12</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-number">8</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pet-select">
+                <span class="select-circle"></span>
+            </div>
+        </div>
+
+        <!-- Chó Trung Thành - Phổ biến -->
+        <div class="pet-card" onclick="selectPet('loyal-dog')" data-rarity="common">
+            <div class="pet-ribbon common">Phổ biến</div>
+            <div class="pet-avatar">
+                <div class="pet-emoji-select">🐕</div>
+            </div>
+            <div class="pet-info">
+                <h3>Chó Trung Thành</h3>
+                <p class="pet-tagline">Kiên định và đáng tin cậy</p>
+                
+                <div class="pet-bonus">
+                    <span class="bonus-badge">🔥 Giữ streak tốt hơn</span>
+                    <span class="bonus-value">+15% bonus khi giữ streak</span>
+                </div>
+                
+                <div class="pet-personality">
+                    <span class="personality-label">Tính cách:</span>
+                    <span class="personality-value">Chung thủy, đáng tin cậy</span>
+                </div>
+                
+                <div class="pet-stats">
+                    <div class="stat">
+                        <span class="stat-icon">❤️</span>
+                        <span class="stat-number">70</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-number">5</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-number">5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pet-select">
+                <span class="select-circle"></span>
+            </div>
+        </div>
+
+        <!-- Rồng Thịnh Vượng - Hiếm -->
+        <div class="pet-card" onclick="selectPet('dragon')" data-rarity="rare">
+            <div class="pet-ribbon rare">Hiếm</div>
+            <div class="pet-avatar">
+                <div class="pet-emoji-select">🐉</div>
+            </div>
+            <div class="pet-info">
+                <h3>Rồng Thịnh Vượng</h3>
+                <p class="pet-tagline">Quyền năng và sức mạnh</p>
+                
+                <div class="pet-bonus">
+                    <span class="bonus-badge">📈 Lãi suất cao hơn</span>
+                    <span class="bonus-value">+0.2% lãi suất cho mỗi số</span>
+                </div>
+                
+                <div class="pet-personality">
+                    <span class="personality-label">Tính cách:</span>
+                    <span class="personality-value">Mạnh mẽ, tham vọng</span>
+                </div>
+                
+                <div class="pet-stats">
+                    <div class="stat">
+                        <span class="stat-icon">❤️</span>
+                        <span class="stat-number">92</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-number">18</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-number">12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pet-select">
+                <span class="select-circle"></span>
+            </div>
+        </div>
+
+        <!-- Thỏ Phú Quý - Phổ biến -->
+        <div class="pet-card" onclick="selectPet('lucky-rabbit')" data-rarity="common">
+            <div class="pet-ribbon common">Phổ biến</div>
+            <div class="pet-avatar">
+                <div class="pet-emoji-select">🐰</div>
+            </div>
+            <div class="pet-info">
+                <h3>Thỏ Phú Quý</h3>
+                <p class="pet-tagline">Nhạy bén và may mắn</p>
+                
+                <div class="pet-bonus">
+                    <span class="bonus-badge">🎁 Nhận thưởng nhiều hơn</span>
+                    <span class="bonus-value">+20% giá trị rewards</span>
+                </div>
+                
+                <div class="pet-personality">
+                    <span class="personality-label">Tính cách:</span>
+                    <span class="personality-value">Lanh lợi, may mắn</span>
+                </div>
+                
+                <div class="pet-stats">
+                    <div class="stat">
+                        <span class="stat-icon">❤️</span>
+                        <span class="stat-number">88</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-number">15</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-number">10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pet-select">
+                <span class="select-circle"></span>
+            </div>
+        </div>
+
+        <!-- Gấu Bảo Vệ - Hiếm -->
+        <div class="pet-card" onclick="selectPet('bear')" data-rarity="rare">
+            <div class="pet-ribbon rare">Hiếm</div>
+            <div class="pet-avatar">
+                <div class="pet-emoji-select">🐻</div>
+            </div>
+            <div class="pet-info">
+                <h3>Gấu Bảo Vệ</h3>
+                <p class="pet-tagline">Mạnh mẽ và bảo vệ</p>
+                
+                <div class="pet-bonus">
+                    <span class="bonus-badge">🛡️ An toàn tối đa</span>
+                    <span class="bonus-value">Cảnh báo sớm rủi ro tài chính</span>
+                </div>
+                
+                <div class="pet-personality">
+                    <span class="personality-label">Tính cách:</span>
+                    <span class="personality-value">Bảo thủ, an toàn</span>
+                </div>
+                
+                <div class="pet-stats">
+                    <div class="stat">
+                        <span class="stat-icon">❤️</span>
+                        <span class="stat-number">95</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-number">22</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-number">15</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pet-select">
+                <span class="select-circle"></span>
+            </div>
+        </div>
+
+        <!-- Cáo Thông Thái - Huyền thoại -->
+        <div class="pet-card" onclick="selectPet('fox')" data-rarity="legendary">
+            <div class="pet-ribbon legendary">Huyền thoại</div>
+            <div class="pet-avatar">
+                <div class="pet-emoji-select">🦊</div>
+            </div>
+            <div class="pet-info">
+                <h3>Cáo Thông Thái</h3>
+                <p class="pet-tagline">Tinh ranh và sáng tạo</p>
+                
+                <div class="pet-bonus">
+                    <span class="bonus-badge">🎯 Đa nhiệm</span>
+                    <span class="bonus-value">Quản lý 2 mục tiêu cùng lúc</span>
+                </div>
+                
+                <div class="pet-personality">
+                    <span class="personality-label">Tính cách:</span>
+                    <span class="personality-value">Thông minh, sáng tạo</span>
+                </div>
+                
+                <div class="pet-stats">
+                    <div class="stat">
+                        <span class="stat-icon">❤️</span>
+                        <span class="stat-number">100</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-number">30</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-number">25</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pet-select">
+                <span class="select-circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thông tin so sánh -->
+    <div class="comparison-card card mb-6">
+        <h3 class="card-title">So sánh các pet</h3>
+        <div class="comparison-table">
+            <div class="comparison-row header">
+                <div class="cell">Pet</div>
+                <div class="cell">Độ hiếm</div>
+                <div class="cell">Bonus</div>
+                <div class="cell">EXP nhận</div>
+            </div>
+            <div class="comparison-row">
+                <div class="cell">🐱 Mèo May Mắn</div>
+                <div class="cell"><span class="rarity common">Phổ biến</span></div>
+                <div class="cell">+10% EXP</div>
+                <div class="cell">50</div>
+            </div>
+            <div class="comparison-row">
+                <div class="cell">🐕 Chó Trung Thành</div>
+                <div class="cell"><span class="rarity common">Phổ biến</span></div>
+                <div class="cell">+15% streak</div>
+                <div class="cell">60</div>
+            </div>
+            <div class="comparison-row">
+                <div class="cell">🐉 Rồng Thịnh Vượng</div>
+                <div class="cell"><span class="rarity rare">Hiếm</span></div>
+                <div class="cell">+0.2% lãi suất</div>
+                <div class="cell">80</div>
+            </div>
+            <div class="comparison-row">
+                <div class="cell">🐰 Thỏ Phú Quý</div>
+                <div class="cell"><span class="rarity common">Phổ biến</span></div>
+                <div class="cell">+20% rewards</div>
+                <div class="cell">55</div>
+            </div>
+            <div class="comparison-row">
+                <div class="cell">🐻 Gấu Bảo Vệ</div>
+                <div class="cell"><span class="rarity rare">Hiếm</span></div>
+                <div class="cell">Cảnh báo rủi ro</div>
+                <div class="cell">70</div>
+            </div>
+            <div class="comparison-row">
+                <div class="cell">🦊 Cáo Thông Thái</div>
+                <div class="cell"><span class="rarity legendary">Huyền thoại</span></div>
+                <div class="cell">Quản lý 2 mục tiêu</div>
+                <div class="cell">100</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút tiếp tục -->
+    <div class="action-footer">
+        <button class="btn btn-primary btn-large" onclick="nextToProductSelection()" id="continue-btn" disabled>
+            Tiếp tục
+        </button>
+    </div>
+</div>
+
+<style>
+/* New Savings Pet Page Styles */
+.new-savings-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+/* Progress Steps */
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.step.active .step-number {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.step.completed .step-number {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+.step-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.step.active .step-label {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.step-line {
+    width: 100px;
+    height: 2px;
+    background: var(--border-color);
+    margin: 0 1rem;
+}
+
+/* Step Header */
+.step-header {
+    text-align: center;
+}
+
+.step-header h2 {
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.step-header p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.goal-highlight {
+    color: var(--primary-color);
+    background: var(--primary-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+/* Info Card */
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    border: none;
+    padding: 2rem;
+}
+
+.info-icon {
+    font-size: 3rem;
+}
+
+.info-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.info-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 0.5rem 1.5rem;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.filter-tab:hover {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.filter-tab.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Pets Grid */
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Pet Card */
+.pet-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.pet-card.selected {
+    border-color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+/* Pet Ribbon */
+.pet-ribbon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.pet-ribbon.common {
+    background: #E5E7EB;
+    color: var(--text-secondary);
+}
+
+.pet-ribbon.rare {
+    background: #818CF8;
+    color: white;
+}
+
+.pet-ribbon.legendary {
+    background: #FBBF24;
+    color: white;
+}
+
+/* Pet Avatar */
+.pet-avatar {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.pet-emoji-select {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    border: 4px solid var(--primary-color);
+    margin: 0 auto;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+    transition: transform 0.3s;
+}
+
+.pet-card:hover .pet-emoji-select {
+    transform: scale(1.05);
+}
+
+/* Pet Info */
+.pet-info h3 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.pet-tagline {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* Pet Bonus */
+.pet-bonus {
+    background: var(--light-bg);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.bonus-badge {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.bonus-value {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Pet Personality */
+.pet-personality {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.personality-label {
+    color: var(--text-secondary);
+    margin-right: 0.5rem;
+}
+
+.personality-value {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Pet Stats */
+.pet-stats {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.stat-icon {
+    font-size: 1rem;
+}
+
+.stat-number {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Pet Select */
+.pet-select {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.select-circle {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: white;
+}
+
+.pet-card.selected .select-circle {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    position: relative;
+}
+
+.pet-card.selected .select-circle::after {
+    content: "✓";
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+}
+
+/* Comparison Card */
+.comparison-card {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-row.header {
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--light-bg);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.cell {
+    padding: 0.5rem;
+}
+
+.rarity {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+}
+
+.rarity.common {
+    background: #E5E7EB;
+    color: #4B5563;
+}
+
+.rarity.rare {
+    background: #818CF8;
+    color: white;
+}
+
+.rarity.legendary {
+    background: #FBBF24;
+    color: #78350F;
+}
+
+/* Action Footer */
+.action-footer {
+    position: sticky;
+    bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 -4px 6px -1px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.btn-large {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.125rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .progress-steps {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .step-line {
+        width: 2px;
+        height: 30px;
+    }
+    
+    .info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .comparison-row.header {
+        display: none;
+    }
+    
+    .cell {
+        text-align: center;
+    }
+}
+</style>
