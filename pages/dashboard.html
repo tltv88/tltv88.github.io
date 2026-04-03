@@ -1,0 +1,796 @@
+<div class="dashboard">
+    <!-- Stats Cards -->
+    <div class="grid grid-4 mb-6">
+        <div class="card stats-card">
+            <div class="stats-icon primary">
+                <i>💰</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">Tổng tiền gửi</span>
+                <h3 class="stats-value">250.000.000 đ</h3>
+            </div>
+        </div>
+        
+        <div class="card stats-card">
+            <div class="stats-icon success">
+                <i>📈</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">Dự kiến nhận được</span>
+                <h3 class="stats-value">266.837.500 đ</h3>
+            </div>
+        </div>
+        
+        <div class="card stats-card">
+            <div class="stats-icon warning">
+                <i>🏦</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">Số số đang gửi</span>
+                <h3 class="stats-value">2 số</h3>
+            </div>
+        </div>
+        
+        <div class="card stats-card">
+            <div class="stats-icon info">
+                <i>⭐</i>
+            </div>
+            <div class="stats-info">
+                <span class="stats-label">EXP cho Pet</span>
+                <h3 class="stats-value">+50</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Action -->
+    <div class="card quick-action mb-6" onclick="loadPage('new-savings-goal')">
+        <div class="quick-action-content">
+            <h3>Gửi tiết kiệm mới</h3>
+            <p>+50 EXP cho Pet của bạn</p>
+        </div>
+        <button class="btn btn-primary">Gửi ngay</button>
+    </div>
+
+    <!-- Combo Overview -->
+    <div class="grid grid-3 mb-6">
+        <!-- Combo Pets -->
+        <div class="card combo-card" onclick="loadPage('pets-collection')">
+            <div class="combo-header">
+                <span class="combo-icon">🐾</span>
+                <h3>Combo Pets</h3>
+            </div>
+            <div class="combo-content">
+                <div class="combo-item">
+                    <span class="combo-label">
+                        <span class="pet-mini-emoji">🐱</span> Mèo May Mắn
+                    </span>
+                    <span class="combo-value">Level 8</span>
+                </div>
+                <div class="combo-item">
+                    <span class="combo-label">
+                        <span class="pet-mini-emoji">🐉</span> Rồng Thịnh Vượng
+                    </span>
+                    <span class="combo-value">Level 12</span>
+                </div>
+                <div class="combo-item">
+                    <span class="combo-label">
+                        <span class="pet-mini-emoji">🐕</span> Chó Trung Thành
+                    </span>
+                    <span class="combo-value">Level 5</span>
+                </div>
+                <div class="combo-progress">
+                    <div class="progress-header">
+                        <span>Tiến độ chung</span>
+                        <span class="percentage">65%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="combo-goal">
+                    <p>Mục tiêu: Tiết kiệm mua nhà</p>
+                    <small>Gửi tiền đều đặn để pet lớn nhanh hơn!</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combo Streak -->
+        <div class="card combo-card" onclick="loadPage('streak-detail')">
+            <div class="combo-header">
+                <span class="combo-icon">🔥</span>
+                <h3>Combo Streak</h3>
+            </div>
+            <div class="combo-content">
+                <div class="streak-stats">
+                    <div class="streak-item">
+                        <span class="streak-label">Tháng liên tiếp</span>
+                        <span class="streak-value">28</span>
+                    </div>
+                    <div class="streak-item">
+                        <span class="streak-label">Kỷ lục</span>
+                        <span class="streak-value">28</span>
+                    </div>
+                </div>
+                <div class="streak-goals">
+                    <h4>Mốc tiếp theo</h4>
+                    <div class="goal-progress">
+                        <span>15/24 tháng</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 62.5%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="streak-badges">
+                    <span class="badge badge-success">🔥 Đang streak</span>
+                    <span class="badge badge-warning">⚠️ Còn 7 ngày</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combo Rewards -->
+        <div class="card combo-card" onclick="loadPage('rewards-dashboard')">
+            <div class="combo-header">
+                <span class="combo-icon">🎁</span>
+                <h3>Combo Rewards</h3>
+            </div>
+            <div class="combo-content">
+                <div class="rewards-stats">
+                    <div class="reward-item">
+                        <span class="reward-label">Chờ nhận</span>
+                        <span class="reward-count">1</span>
+                    </div>
+                    <div class="locked-rewards">
+                        <span class="reward-label">Đang khóa</span>
+                        <span class="locked-count">9</span>
+                    </div>
+                </div>
+                <div class="next-reward">
+                    <h4>Phần thưởng tiếp theo</h4>
+                    <div class="reward-card">
+                        <span class="reward-name">Voucher Gongcha</span>
+                        <span class="reward-value">50.000₫</span>
+                    </div>
+                </div>
+                <div class="level-info">
+                    <span class="level-label">Level hiện tại</span>
+                    <span class="level-value">18</span>
+                    <div class="progress-bar small">
+                        <div class="progress-fill" style="width: 36%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Savings Overview -->
+    <div class="card mb-6">
+        <div class="card-header">
+            <h2 class="card-title">Số tiết kiệm của bạn (2 số)</h2>
+            <a href="#" class="view-all" onclick="loadPage('savings-list')">Xem tất cả →</a>
+        </div>
+        
+        <div class="savings-list">
+            <!-- Savings Item 1 -->
+            <div class="savings-item">
+                <div class="savings-info">
+                    <div class="savings-title">
+                        <h4>Tiết kiệm học phí</h4>
+                        <span class="savings-icon">🎓</span>
+                    </div>
+                    <span class="badge badge-success">Đang gửi</span>
+                </div>
+                <div class="savings-details">
+                    <div class="detail-item">
+                        <span class="label">Đáo hạn:</span>
+                        <span class="value">15/08/2025</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Lãi suất:</span>
+                        <span class="value">6.5%/năm</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Số tiền:</span>
+                        <span class="value">50.000.000 đ</span>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span>Tiến độ mục tiêu</span>
+                        <span class="percentage">65%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="savings-footer">
+                    <span class="total-label">Tổng nhận được:</span>
+                    <span class="total-value highlight">52.437.500 đ</span>
+                </div>
+            </div>
+
+            <!-- Savings Item 2 -->
+            <div class="savings-item">
+                <div class="savings-info">
+                    <div class="savings-title">
+                        <h4>Tiết kiệm mua nhà</h4>
+                        <span class="savings-icon">🏠</span>
+                    </div>
+                    <span class="badge badge-success">Đang gửi</span>
+                </div>
+                <div class="savings-details">
+                    <div class="detail-item">
+                        <span class="label">Đáo hạn:</span>
+                        <span class="value">01/06/2026</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Lãi suất:</span>
+                        <span class="value">7.2%/năm</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Số tiền:</span>
+                        <span class="value">200.000.000 đ</span>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span>Tiến độ mục tiêu</span>
+                        <span class="percentage">40%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="savings-footer">
+                    <span class="total-label">Tổng nhận được:</span>
+                    <span class="total-value highlight">214.400.000 đ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activities -->
+    <div class="card mb-6">
+        <div class="card-header">
+            <h2 class="card-title">Hoạt động gần đây</h2>
+            <a href="#" class="view-all" onclick="loadPage('activities')">Xem tất cả →</a>
+        </div>
+        
+        <div class="activities-list">
+            <div class="activity-item">
+                <div class="activity-icon deposit">💰</div>
+                <div class="activity-content">
+                    <h4>Gửi tiết kiệm</h4>
+                    <p>Bạn đã gửi 5.000.000 đ</p>
+                </div>
+                <div class="activity-time">2 giờ trước</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-icon pet">🐱</div>
+                <div class="activity-content">
+                    <h4>Pet nhận EXP</h4>
+                    <p>Mèo May Mắn +50 EXP</p>
+                </div>
+                <div class="activity-time">Hôm qua</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-icon reward">🎁</div>
+                <div class="activity-content">
+                    <h4>Nhận phần thưởng</h4>
+                    <p>Voucher Gongcha 50K</p>
+                </div>
+                <div class="activity-time">Hôm qua</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Totals Card -->
+    <div class="card totals-card">
+        <h3>Tổng cộng ưu đãi</h3>
+        <div class="totals-grid">
+            <div class="total-item">
+                <span class="total-label">Lãi suất +</span>
+                <span class="total-value">2</span>
+            </div>
+            <div class="total-item">
+                <span class="total-label">Voucher</span>
+                <span class="total-value">5</span>
+            </div>
+            <div class="total-item">
+                <span class="total-label">Trải nghiệm</span>
+                <span class="total-value">1</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Dashboard Styles */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Stats Cards */
+.stats-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.stats-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stats-icon.primary { 
+    background: var(--primary-light); 
+    color: var(--primary-color); 
+}
+
+.stats-icon.success { 
+    background: var(--success-light); 
+    color: var(--secondary-color); 
+}
+
+.stats-icon.warning { 
+    background: #FEF3C7; 
+    color: var(--warning-color); 
+}
+
+.stats-icon.info { 
+    background: #E0F2FE; 
+    color: #0284C7; 
+}
+
+.stats-info {
+    flex: 1;
+}
+
+.stats-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.stats-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Quick Action Card */
+.quick-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), #818CF8);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: none;
+}
+
+.quick-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+}
+
+.quick-action-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.quick-action-content p {
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+/* Combo Cards */
+.combo-card {
+    cursor: pointer;
+    transition: all 0.3s;
+    height: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.combo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.combo-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.combo-icon {
+    font-size: 1.5rem;
+}
+
+.combo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.combo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.combo-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.combo-value {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.pet-mini-emoji {
+    font-size: 1.2rem;
+}
+
+/* Streak trong dashboard */
+.streak-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.streak-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.streak-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.streak-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.streak-badges {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Rewards trong dashboard */
+.rewards-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.reward-item, .locked-rewards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reward-count, .locked-count {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.reward-count {
+    color: var(--secondary-color);
+}
+
+.locked-count {
+    color: var(--text-secondary);
+}
+
+.level-info {
+    margin-top: 0.5rem;
+}
+
+.level-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.level-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Savings List */
+.savings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.savings-item {
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: var(--card-bg);
+    transition: all 0.3s;
+}
+
+.savings-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.savings-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.savings-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.savings-title h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.savings-icon {
+    font-size: 1.25rem;
+}
+
+.savings-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item .label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.detail-item .value {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.progress-section {
+    margin-top: 1rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.percentage {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.savings-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.total-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.total-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.total-value.highlight {
+    color: var(--primary-color);
+}
+
+/* Activities List */
+.activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+    transition: transform 0.3s;
+}
+
+.activity-item:hover {
+    transform: translateX(4px);
+    background: var(--primary-light);
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.activity-icon.deposit {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.activity-icon.pet {
+    background: var(--success-light);
+    color: var(--secondary-color);
+}
+
+.activity-icon.reward {
+    background: #FEF3C7;
+    color: var(--warning-color);
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.activity-content p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.activity-time {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+/* Totals Card */
+.totals-card {
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    border: none;
+}
+
+.totals-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.totals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.total-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.total-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.total-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* View All Link */
+.view-all {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.view-all:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Progress Bar Small */
+.progress-bar.small {
+    height: 0.375rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .savings-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .savings-details {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .totals-grid {
+        gap: 1rem;
+    }
+    
+    .total-value {
+        font-size: 1.25rem;
+    }
+    
+    .activity-item {
+        flex-wrap: wrap;
+    }
+    
+    .activity-time {
+        width: 100%;
+        text-align: right;
+    }
+}
+</style>
