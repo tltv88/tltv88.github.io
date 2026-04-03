@@ -1,0 +1,251 @@
+<div class="reward-detail-page">
+    <!-- Header -->
+    <div class="page-header">
+        <button class="btn-back" onclick="loadPage('rewards-dashboard')">
+            <i>←</i> Quay lại
+        </button>
+        <h1>Chi tiết phần thưởng</h1>
+    </div>
+
+    <!-- Reward Detail Card -->
+    <div class="card reward-detail-card mb-6">
+        <div class="reward-header">
+            <div class="reward-icon-large">🧋</div>
+            <div class="reward-info">
+                <h2>Voucher Gongcha 50K</h2>
+                <div class="reward-type-badge voucher">Voucher</div>
+            </div>
+        </div>
+
+        <div class="reward-description">
+            <p>Giảm 50.000đ cho đơn hàng tại Gongcha. Áp dụng cho tất cả các cửa hàng trên toàn quốc.</p>
+        </div>
+
+        <div class="reward-details-grid">
+            <div class="detail-item">
+                <span class="detail-label">Giá trị</span>
+                <span class="detail-value highlight">50.000đ</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Hạn sử dụng</span>
+                <span class="detail-value">31/12/2024</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Điều kiện</span>
+                <span class="detail-value">Level 18+</span>
+            </div>
+        </div>
+
+        <div class="reward-actions">
+            <button class="btn btn-primary btn-large" onclick="claimReward('gongcha')">
+                Nhận thưởng ngay
+            </button>
+            <button class="btn btn-outline btn-large" onclick="shareReward()">
+                Chia sẻ
+            </button>
+        </div>
+    </div>
+
+    <!-- Điều khoản -->
+    <div class="card mb-6">
+        <h3 class="card-title">Điều khoản sử dụng</h3>
+        <ul class="terms-list">
+            <li>Mỗi khách hàng chỉ được sử dụng 1 voucher cho 1 lần giao dịch</li>
+            <li>Không có giá trị quy đổi thành tiền mặt</li>
+            <li>Áp dụng cho đơn hàng từ 100.000đ trở lên</li>
+            <li>Không áp dụng cùng các chương trình khuyến mãi khác</li>
+        </ul>
+    </div>
+
+    <!-- Phần thưởng tương tự -->
+    <div class="card">
+        <h3 class="card-title">Phần thưởng tương tự</h3>
+        
+        <div class="similar-rewards-grid">
+            <div class="similar-reward-item" onclick="loadPage('reward-detail&id=highland')">
+                <div class="similar-reward-icon">☕</div>
+                <div class="similar-reward-info">
+                    <h4>Voucher Highland 50K</h4>
+                    <p>50.000đ</p>
+                </div>
+            </div>
+
+            <div class="similar-reward-item" onclick="loadPage('reward-detail&id=starbucks')">
+                <div class="similar-reward-icon">☕</div>
+                <div class="similar-reward-info">
+                    <h4>Voucher Starbucks 100K</h4>
+                    <p>100.000đ</p>
+                </div>
+            </div>
+
+            <div class="similar-reward-item" onclick="loadPage('reward-detail&id=phuclong')">
+                <div class="similar-reward-icon">🍵</div>
+                <div class="similar-reward-info">
+                    <h4>Voucher Phúc Long 30K</h4>
+                    <p>30.000đ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.reward-detail-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reward-detail-card {
+    background: linear-gradient(135deg, #FFFFFF, #F9FAFB);
+}
+
+.reward-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.reward-icon-large {
+    font-size: 5rem;
+    background: var(--primary-light);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reward-info h2 {
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.reward-type-badge {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.reward-type-badge.voucher {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.reward-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.reward-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.detail-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.detail-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.detail-value.highlight {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.reward-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-large {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.terms-list {
+    list-style: none;
+    padding: 0;
+}
+
+.terms-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.terms-list li:before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.terms-list li:last-child {
+    border-bottom: none;
+}
+
+.similar-rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.similar-reward-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.similar-reward-item:hover {
+    background: var(--primary-light);
+    transform: translateX(4px);
+}
+
+.similar-reward-icon {
+    font-size: 2rem;
+}
+
+.similar-reward-info h4 {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.similar-reward-info p {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+</style>
