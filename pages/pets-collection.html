@@ -1,0 +1,679 @@
+<div class="pets-collection-page">
+    <!-- Header -->
+    <div class="page-header">
+        <button class="btn-back" onclick="loadPage('dashboard')">
+            <i>←</i> Quay lại
+        </button>
+        <h1>Combo Pets</h1>
+    </div>
+
+    <!-- Mô tả -->
+    <div class="description-card card mb-6">
+        <p>Linh vật của bạn lớn lên cùng mục tiêu tiết kiệm</p>
+    </div>
+
+    <!-- Danh sách Pets -->
+    <div class="card mb-6">
+        <div class="card-header">
+            <h2 class="card-title">Pets của bạn (3/6)</h2>
+            <button class="btn btn-primary btn-small" onclick="openAddPetModal()">
+                + Thêm Pet mới
+            </button>
+        </div>
+
+        <div class="pets-grid">
+            <!-- Pet 1: Lucky - Mèo May Mắn -->
+            <div class="pet-card" onclick="loadPage('pet-detail&id=lucky-cat')">
+                <div class="pet-card-avatar">
+                    <div class="pet-emoji">🐱</div>
+                    <span class="pet-level-badge">Lv.8</span>
+                </div>
+                <div class="pet-card-info">
+                    <h3>Mèo May Mắn</h3>
+                    <div class="pet-type">Phổ biến</div>
+                    <div class="pet-exp-bar">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="exp-text">650/1000 EXP</span>
+                    </div>
+                    <div class="pet-badge">
+                        <span class="badge bonus-badge">✨ +10% EXP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pet 2: Dragon - Rồng Thịnh Vượng -->
+            <div class="pet-card" onclick="loadPage('pet-detail&id=dragon')">
+                <div class="pet-card-avatar">
+                    <div class="pet-emoji rare">🐉</div>
+                    <span class="pet-level-badge">Lv.12</span>
+                </div>
+                <div class="pet-card-info">
+                    <h3>Rồng Thịnh Vượng</h3>
+                    <div class="pet-type">Hiếm</div>
+                    <div class="pet-exp-bar">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="exp-text">850/1000 EXP</span>
+                    </div>
+                    <div class="pet-badge">
+                        <span class="badge bonus-badge rare">📈 +0.2%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pet 3: Buddy - Chó Trung Thành -->
+            <div class="pet-card" onclick="loadPage('pet-detail&id=loyal-dog')">
+                <div class="pet-card-avatar">
+                    <div class="pet-emoji">🐕</div>
+                    <span class="pet-level-badge">Lv.5</span>
+                </div>
+                <div class="pet-card-info">
+                    <h3>Chó Trung Thành</h3>
+                    <div class="pet-type">Phổ biến</div>
+                    <div class="pet-exp-bar">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <span class="exp-text">400/1000 EXP</span>
+                    </div>
+                    <div class="pet-badge">
+                        <span class="badge bonus-badge">🔥 +15% streak</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pet 4: Thỏ Phú Quý (Chưa mở khóa) -->
+            <div class="pet-card locked" onclick="showNotification('Cần đạt Level 20 để mở khóa')">
+                <div class="pet-card-avatar">
+                    <div class="pet-emoji locked">🐰</div>
+                    <span class="pet-level-badge locked">???</span>
+                </div>
+                <div class="pet-card-info">
+                    <h3>Thỏ Phú Quý</h3>
+                    <div class="pet-type">Phổ biến</div>
+                    <div class="lock-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span class="lock-text">Level 20</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pet 5: Gấu Bảo Vệ (Chưa mở khóa) -->
+            <div class="pet-card locked" onclick="showNotification('Cần đạt Level 30 để mở khóa')">
+                <div class="pet-card-avatar">
+                    <div class="pet-emoji locked">🐻</div>
+                    <span class="pet-level-badge locked">???</span>
+                </div>
+                <div class="pet-card-info">
+                    <h3>Gấu Bảo Vệ</h3>
+                    <div class="pet-type">Hiếm</div>
+                    <div class="lock-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span class="lock-text">Level 30</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pet 6: Cáo Thông Thái (Chưa mở khóa) -->
+            <div class="pet-card locked" onclick="showNotification('Cần đạt Level 50 để mở khóa')">
+                <div class="pet-card-avatar">
+                    <div class="pet-emoji locked">🦊</div>
+                    <span class="pet-level-badge locked">???</span>
+                </div>
+                <div class="pet-card-info">
+                    <h3>Cáo Thông Thái</h3>
+                    <div class="pet-type">Huyền thoại</div>
+                    <div class="lock-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <span class="lock-text">Level 50</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thống kê pet -->
+    <div class="stats-grid mb-6">
+        <div class="stat-card">
+            <div class="stat-icon">✨</div>
+            <div class="stat-detail">
+                <span class="stat-label">Tổng EXP</span>
+                <span class="stat-value">1,900</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-detail">
+                <span class="stat-label">Thành tích</span>
+                <span class="stat-value">35</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⏱️</div>
+            <div class="stat-detail">
+                <span class="stat-label">Thời gian nuôi</span>
+                <span class="stat-value">128 ngày</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm Pet mới -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Thêm Pet mới</h2>
+            <span class="badge badge-info">Có thể nhận: 3</span>
+        </div>
+
+        <div class="new-pets-grid">
+            <!-- Mèo May Mắn -->
+            <div class="new-pet-card available">
+                <div class="new-pet-avatar">
+                    <div class="pet-emoji small">🐱</div>
+                </div>
+                <div class="new-pet-info">
+                    <h4>Mèo May Mắn</h4>
+                    <span class="pet-type-badge common">Phổ biến</span>
+                </div>
+                <button class="btn btn-primary btn-small" onclick="claimPet('lucky-cat')">Nhận</button>
+            </div>
+
+            <!-- Rồng Thịnh Vượng -->
+            <div class="new-pet-card available">
+                <div class="new-pet-avatar">
+                    <div class="pet-emoji small">🐉</div>
+                </div>
+                <div class="new-pet-info">
+                    <h4>Rồng Thịnh Vượng</h4>
+                    <span class="pet-type-badge rare">Hiếm</span>
+                </div>
+                <button class="btn btn-primary btn-small" onclick="claimPet('dragon')">Nhận</button>
+            </div>
+
+            <!-- Chó Trung Thành -->
+            <div class="new-pet-card available">
+                <div class="new-pet-avatar">
+                    <div class="pet-emoji small">🐕</div>
+                </div>
+                <div class="new-pet-info">
+                    <h4>Chó Trung Thành</h4>
+                    <span class="pet-type-badge common">Phổ biến</span>
+                </div>
+                <button class="btn btn-primary btn-small" onclick="claimPet('loyal-dog')">Nhận</button>
+            </div>
+
+            <!-- Thỏ Phú Quý (locked) -->
+            <div class="new-pet-card locked">
+                <div class="new-pet-avatar">
+                    <div class="pet-emoji small locked">🐰</div>
+                </div>
+                <div class="new-pet-info">
+                    <h4>Thỏ Phú Quý</h4>
+                    <span class="pet-type-badge common">Phổ biến</span>
+                </div>
+                <div class="lock-requirement">
+                    <span class="lock-icon-small">🔒</span>
+                    <span class="requirement-text">Level 20</span>
+                </div>
+            </div>
+
+            <!-- Gấu Bảo Vệ (locked) -->
+            <div class="new-pet-card locked">
+                <div class="new-pet-avatar">
+                    <div class="pet-emoji small locked">🐻</div>
+                </div>
+                <div class="new-pet-info">
+                    <h4>Gấu Bảo Vệ</h4>
+                    <span class="pet-type-badge rare">Hiếm</span>
+                </div>
+                <div class="lock-requirement">
+                    <span class="lock-icon-small">🔒</span>
+                    <span class="requirement-text">Level 30</span>
+                </div>
+            </div>
+
+            <!-- Cáo Thông Thái (locked) -->
+            <div class="new-pet-card locked">
+                <div class="new-pet-avatar">
+                    <div class="pet-emoji small locked">🦊</div>
+                </div>
+                <div class="new-pet-info">
+                    <h4>Cáo Thông Thái</h4>
+                    <span class="pet-type-badge legendary">Huyền thoại</span>
+                </div>
+                <div class="lock-requirement">
+                    <span class="lock-icon-small">🔒</span>
+                    <span class="requirement-text">Level 50</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mẹo nuôi pet -->
+    <div class="tips-card card mt-6">
+        <div class="tips-header">
+            <span class="tips-icon">💡</span>
+            <h3>Mẹo nuôi pet hiệu quả</h3>
+        </div>
+        <div class="tips-list">
+            <div class="tip-item">
+                <span class="tip-bullet">•</span>
+                <span>Gửi tiết kiệm đều đặn mỗi tháng để nhận EXP</span>
+            </div>
+            <div class="tip-item">
+                <span class="tip-bullet">•</span>
+                <span>Giữ streak để nhận bonus EXP cho pet</span>
+            </div>
+            <div class="tip-item">
+                <span class="tip-bullet">•</span>
+                <span>Hoàn thành mục tiêu để pet tiến hóa nhanh hơn</span>
+            </div>
+            <div class="tip-item">
+                <span class="tip-bullet">•</span>
+                <span>Mỗi pet có bonus riêng, chọn pet phù hợp với mục tiêu</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Pets Collection Page Styles */
+.pets-collection-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Description Card */
+.description-card {
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    text-align: center;
+    border: none;
+    padding: 2rem;
+}
+
+/* Pets Grid */
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Pet Card */
+.pet-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -8px rgba(79, 70, 229, 0.2);
+    border-color: var(--primary-color);
+}
+
+.pet-card.locked {
+    opacity: 0.7;
+    filter: grayscale(0.5);
+    cursor: not-allowed;
+}
+
+.pet-card.locked:hover {
+    transform: none;
+    border-color: var(--border-color);
+}
+
+/* Pet Avatar */
+.pet-card-avatar {
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+
+.pet-emoji {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.pet-card:hover .pet-emoji {
+    transform: scale(1.05);
+}
+
+.pet-emoji.rare {
+    background: linear-gradient(135deg, #818CF8, #6366F1);
+    color: white;
+}
+
+.pet-emoji.locked {
+    background: linear-gradient(135deg, #9CA3AF, #6B7280);
+    border-color: #9CA3AF;
+    filter: grayscale(1);
+}
+
+.pet-emoji.small {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    border-width: 2px;
+}
+
+/* Level Badge */
+.pet-level-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 2px solid white;
+}
+
+.pet-level-badge.locked {
+    background: #9CA3AF;
+}
+
+/* Pet Info */
+.pet-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-card-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.pet-type {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+/* Pet Badge */
+.pet-badge {
+    margin-top: 0.5rem;
+}
+
+.bonus-badge {
+    background: var(--success-light);
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+}
+
+.bonus-badge.rare {
+    background: #818CF8;
+    color: white;
+}
+
+/* Lock Overlay */
+.lock-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.lock-icon {
+    font-size: 1.2rem;
+}
+
+.lock-text {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: var(--light-bg);
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-detail {
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* New Pets Grid */
+.new-pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.new-pet-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 1rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.new-pet-card.available:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.new-pet-card.locked {
+    opacity: 0.6;
+    background: #F3F4F6;
+}
+
+.new-pet-info {
+    flex: 1;
+}
+
+.new-pet-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+/* Pet Type Badges */
+.pet-type-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.pet-type-badge.common {
+    background: #E5E7EB;
+    color: #4B5563;
+}
+
+.pet-type-badge.rare {
+    background: #818CF8;
+    color: white;
+}
+
+.pet-type-badge.legendary {
+    background: #FBBF24;
+    color: #78350F;
+}
+
+/* Lock Requirement */
+.lock-requirement {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #E5E7EB;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+}
+
+.lock-icon-small {
+    font-size: 0.8rem;
+}
+
+.requirement-text {
+    color: #4B5563;
+    font-weight: 500;
+}
+
+/* Tips Card */
+.tips-card {
+    background: linear-gradient(135deg, #FEF3C7, #FFFBEB);
+    border: none;
+}
+
+.tips-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.tips-icon {
+    font-size: 1.5rem;
+}
+
+.tips-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #92400E;
+}
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #92400E;
+}
+
+.tip-bullet {
+    color: var(--warning-color);
+    font-size: 1.2rem;
+}
+
+/* Margin Utilities */
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .new-pets-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pet-card {
+        padding: 1rem;
+    }
+    
+    .pet-emoji {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pet-card.available:hover .pet-emoji {
+    animation: pulse 1s infinite;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+</style>
