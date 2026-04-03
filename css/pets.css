@@ -1,0 +1,590 @@
+/* Pets Collection & Detail Styles */
+
+/* Pets Collection Page */
+.pets-collection-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Description Card */
+.description-card {
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    text-align: center;
+    border: none;
+    padding: 2rem;
+}
+
+/* Pets Grid */
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Pet Card */
+.pet-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pet-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.pet-card-avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.pet-emoji {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border: 3px solid var(--primary-color);
+}
+
+.pet-emoji.large {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+    border-width: 2px;
+}
+
+.pet-level-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.pet-card-info {
+    flex: 1;
+}
+
+.pet-card-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.pet-type {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.pet-exp-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* New Pets Grid */
+.new-pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.new-pet-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.new-pet-card:hover:not(.locked) {
+    background: var(--primary-light);
+    transform: translateX(4px);
+}
+
+.new-pet-card.locked {
+    opacity: 0.5;
+}
+
+.new-pet-avatar {
+    width: 60px;
+    height: 60px;
+}
+
+.new-pet-info {
+    flex: 1;
+}
+
+.new-pet-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.locked-badge {
+    font-size: 1.5rem;
+}
+
+/* Badge Info */
+.badge-info {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+/* Pet Detail Page */
+.pet-detail-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Pet Profile Header */
+.pet-profile-header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.pet-main-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.pet-emoji-main {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), #E0E7FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.pet-main-level {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pet-main-info {
+    flex: 1;
+}
+
+.pet-type-badge {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: 9999px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.pet-bonus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    background: var(--success-light);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.bonus-icon {
+    font-size: 1.25rem;
+}
+
+/* Pet Stats Grid */
+.pet-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.percentage {
+    font-weight: 600;
+    min-width: 45px;
+    color: var(--text-primary);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.stat-goal {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Progress Bar Small */
+.progress-bar.small {
+    height: 0.375rem;
+}
+
+/* EXP Section */
+.exp-main {
+    text-align: center;
+}
+
+.exp-numbers {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.exp-current {
+    color: var(--primary-color);
+}
+
+.exp-total {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.progress-bar.large {
+    height: 1rem;
+    margin: 1rem 0;
+}
+
+.exp-next {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.exp-next strong {
+    color: var(--primary-color);
+}
+
+/* Evolution Timeline */
+.evolution-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.evolution-stage {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.evolution-stage.completed {
+    background: var(--success-light);
+}
+
+.evolution-stage.current {
+    background: var(--primary-light);
+    border: 2px solid var(--primary-color);
+}
+
+.evolution-stage.locked {
+    opacity: 0.5;
+}
+
+.stage-icon {
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage-info {
+    flex: 1;
+}
+
+.stage-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.stage-level {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.stage-check {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.stage-current {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    background: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.stage-lock {
+    font-size: 1.25rem;
+}
+
+/* Activities List */
+.activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+    transition: transform 0.3s;
+}
+
+.activity-item:hover {
+    transform: translateX(4px);
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.activity-info {
+    flex: 1;
+}
+
+.activity-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.activity-date {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.activity-exp {
+    font-weight: 600;
+    color: var(--secondary-color);
+    background: var(--success-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+
+/* Tips Grid */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--light-bg);
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+.tip-item:hover {
+    background: var(--primary-light);
+    transform: translateX(4px);
+}
+
+.tip-icon {
+    font-size: 1.25rem;
+    width: 32px;
+}
+
+.tip-label {
+    flex: 1;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.tip-value {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 1rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pet-profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pet-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-value {
+        justify-content: center;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .evolution-stage {
+        flex-wrap: wrap;
+    }
+    
+    .stage-current {
+        width: 100%;
+        text-align: center;
+    }
+}
