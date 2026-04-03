@@ -1,0 +1,511 @@
+/* Streak Detail Styles */
+
+.streak-detail-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Streak Main Info */
+.streak-main-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+.streak-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.streak-stat .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.streak-stat .stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.streak-stat .stat-unit {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Milestone Progress */
+.milestone-progress {
+    text-align: center;
+}
+
+.progress-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.progress-display .current {
+    color: var(--primary-color);
+}
+
+.progress-display .separator,
+.progress-display .total {
+    color: var(--text-secondary);
+}
+
+.progress-display .unit {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-left: 0.5rem;
+}
+
+.progress-note {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.progress-note strong {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+/* Streak Badge */
+.streak-badge {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Habits List */
+.habits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.habit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+    border-left: 4px solid transparent;
+    transition: transform 0.3s;
+}
+
+.habit-item:hover {
+    transform: translateX(4px);
+}
+
+.habit-item.completed {
+    border-left-color: var(--secondary-color);
+    background: linear-gradient(90deg, var(--success-light), var(--light-bg));
+}
+
+.habit-check {
+    font-size: 1.5rem;
+}
+
+.habit-info {
+    flex: 1;
+}
+
+.habit-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.habit-info p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.habit-count {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Rewards Timeline */
+.rewards-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.reward-milestone {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.75rem;
+    transition: all 0.3s;
+}
+
+.reward-milestone:hover {
+    transform: translateX(4px);
+}
+
+.reward-milestone.claimed {
+    background: var(--success-light);
+}
+
+.reward-milestone.current {
+    background: var(--primary-light);
+    border: 2px solid var(--primary-color);
+}
+
+.reward-milestone.locked {
+    opacity: 0.6;
+}
+
+.milestone-badge {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.milestone-info {
+    flex: 1;
+}
+
+.milestone-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.milestone-info p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.milestone-status {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.milestone-status.claimed {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.milestone-status.current {
+    background: var(--primary-color);
+    color: white;
+}
+
+.milestone-status.locked {
+    background: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* History List */
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.history-list.expanded {
+    max-height: 1000px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: var(--light-bg);
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.history-item:hover {
+    transform: translateX(4px);
+    background: var(--primary-light);
+}
+
+.history-month {
+    font-weight: 500;
+    min-width: 100px;
+    color: var(--text-primary);
+}
+
+.history-habits {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.habit-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.habit-dot.completed {
+    background: var(--success-light);
+    color: var(--secondary-color);
+}
+
+.habit-dot.missed {
+    background: #FEE2E2;
+    color: var(--danger-color);
+    opacity: 0.5;
+}
+
+.history-status {
+    font-weight: 500;
+    min-width: 80px;
+    text-align: right;
+}
+
+.history-status.completed {
+    color: var(--secondary-color);
+}
+
+.history-status.partial {
+    color: var(--warning-color);
+}
+
+/* Warning Card */
+.warning-card {
+    background: #FEF3C7;
+    border: none;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.warning-icon {
+    font-size: 2rem;
+}
+
+.warning-content h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--warning-color);
+}
+
+.warning-content p {
+    margin-bottom: 1rem;
+    color: #92400E;
+    line-height: 1.6;
+}
+
+.warning-content .tip {
+    background: rgba(255,255,255,0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.warning-content .tip strong {
+    color: var(--warning-color);
+}
+
+/* Streak Warning Notification */
+.streak-warning-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FEF3C7;
+    border-left: 4px solid var(--warning-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s;
+}
+
+.streak-warning-notification .warning-content strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--warning-color);
+}
+
+.streak-warning-notification .warning-content p {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    color: #92400E;
+}
+
+.streak-warning-notification button {
+    background: var(--warning-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.streak-warning-notification button:hover {
+    background: #D97706;
+}
+
+/* Reward Notification */
+.reward-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: popIn 0.3s;
+    max-width: 400px;
+    text-align: center;
+}
+
+.reward-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.reward-text strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+}
+
+.reward-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.reward-notification button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.reward-notification button:hover {
+    background: #4338CA;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .streak-main-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .streak-stat .stat-value {
+        font-size: 2.5rem;
+    }
+    
+    .progress-display {
+        font-size: 2rem;
+    }
+    
+    .habit-item {
+        flex-wrap: wrap;
+    }
+    
+    .habit-count {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .reward-milestone {
+        flex-wrap: wrap;
+    }
+    
+    .milestone-status {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .history-item {
+        flex-wrap: wrap;
+    }
+    
+    .history-month {
+        width: 100%;
+    }
+    
+    .history-status {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .warning-card {
+        flex-direction: column;
+    }
+}
