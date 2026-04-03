@@ -1,0 +1,326 @@
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="footer-logo">
+                <i>💰</i>
+                <span>Savings App</span>
+            </div>
+            <p class="footer-description">
+                Ứng dụng quản lý tiết kiệm thông minh, giúp bạn đạt được mục tiêu tài chính với những người bạn đồng hành đáng yêu.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Sản phẩm</h4>
+            <ul class="footer-links">
+                <li><a href="#" onclick="loadPage('dashboard')">Tổng quan</a></li>
+                <li><a href="#" onclick="loadPage('new-savings-goal')">Tạo khoản mới</a></li>
+                <li><a href="#" onclick="loadPage('pets-collection')">Pets của tôi</a></li>
+                <li><a href="#" onclick="loadPage('rewards-dashboard')">Kho phần thưởng</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Hỗ trợ</h4>
+            <ul class="footer-links">
+                <li><a href="#" onclick="showNotification('Trung tâm trợ giúp')">Trung tâm trợ giúp</a></li>
+                <li><a href="#" onclick="showNotification('Liên hệ chúng tôi')">Liên hệ chúng tôi</a></li>
+                <li><a href="#" onclick="showNotification('Điều khoản sử dụng')">Điều khoản sử dụng</a></li>
+                <li><a href="#" onclick="showNotification('Chính sách bảo mật')">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Theo dõi chúng tôi</h4>
+            <div class="social-links">
+                <a href="#" class="social-link" onclick="showNotification('Facebook')">
+                    <i>📘</i>
+                </a>
+                <a href="#" class="social-link" onclick="showNotification('Instagram')">
+                    <i>📷</i>
+                </a>
+                <a href="#" class="social-link" onclick="showNotification('Twitter')">
+                    <i>🐦</i>
+                </a>
+                <a href="#" class="social-link" onclick="showNotification('Youtube')">
+                    <i>▶️</i>
+                </a>
+            </div>
+            
+            <div class="app-download">
+                <h5>Tải ứng dụng</h5>
+                <div class="download-buttons">
+                    <button class="btn-download" onclick="showNotification('App Store')">
+                        <i>🍎</i>
+                        <span>App Store</span>
+                    </button>
+                    <button class="btn-download" onclick="showNotification('Google Play')">
+                        <i>📱</i>
+                        <span>Google Play</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="copyright">
+            © 2024 Savings App. Tất cả các quyền được bảo lưu.
+        </div>
+        <div class="footer-bottom-links">
+            <a href="#" onclick="showNotification('Điều khoản')">Điều khoản</a>
+            <span class="separator">|</span>
+            <a href="#" onclick="showNotification('Bảo mật')">Bảo mật</a>
+            <span class="separator">|</span>
+            <a href="#" onclick="showNotification('Cookies')">Cookies</a>
+        </div>
+    </div>
+</footer>
+
+<style>
+.main-footer {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.footer-logo i {
+    font-size: 1.5rem;
+}
+
+.footer-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.footer-section h5 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.footer-links li a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-link i {
+    font-size: 1.25rem;
+    font-style: normal;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+}
+
+.btn-download:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-download i {
+    font-size: 1rem;
+    font-style: normal;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.75rem;
+}
+
+.footer-bottom-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary-color);
+}
+
+.separator {
+    color: var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-section {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .download-buttons {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom-links {
+        justify-content: center;
+    }
+}
+
+/* Animation cho footer */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-footer {
+    animation: fadeInUp 0.5s ease;
+}
+
+.footer-section {
+    animation: fadeInUp 0.5s ease;
+    animation-fill-mode: both;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+</style>
